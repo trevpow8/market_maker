@@ -1,0 +1,2 @@
+/opt/anaconda3/bin/arm64-apple-darwin20.0.0-ar qc liblob_engine.a CMakeFiles/lob_engine.dir/lob_engine/OrderBook.cpp.o
+/opt/anaconda3/bin/llvm-ranlib liblob_engine.a

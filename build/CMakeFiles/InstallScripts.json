@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/trevorpowell/market_maker/build/cmake_install.cmake",
+		"/Users/trevorpowell/market_maker/build/src/cmake_install.cmake",
+		"/Users/trevorpowell/market_maker/build/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
