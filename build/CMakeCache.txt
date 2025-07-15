@@ -229,30 +229,31 @@ CMAKE_TAPI:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/tapi
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
-CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+CMAKE_VERBOSE_MAKEFILE:BOOL=ON
 
-//Directory under which to collect all populated content
-FETCHCONTENT_BASE_DIR:PATH=/Users/trevorpowell/market_maker/build/_deps
+//The directory containing a CMake configuration file for CURL.
+CURL_DIR:PATH=CURL_DIR-NOTFOUND
 
-//Disables all attempts to download or update content and assumes
-// source dirs already exist
-FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
+//Path to a file.
+CURL_INCLUDE_DIR:PATH=/opt/anaconda3/include
 
-//Enables QUIET option for all content population
-FETCHCONTENT_QUIET:BOOL=ON
+//Path to a library.
+CURL_LIBRARY_DEBUG:FILEPATH=CURL_LIBRARY_DEBUG-NOTFOUND
 
-//When not empty, overrides where to find pre-populated content
-// for googletest
-FETCHCONTENT_SOURCE_DIR_GOOGLETEST:PATH=
-
-//Enables UPDATE_DISCONNECTED behavior for all content population
-FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
-
-//Enables UPDATE_DISCONNECTED behavior just for population of googletest
-FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
+//Path to a library.
+CURL_LIBRARY_RELEASE:FILEPATH=/opt/anaconda3/lib/libcurl.dylib
 
 //The directory containing a CMake configuration file for GTest.
 GTest_DIR:PATH=/opt/anaconda3/lib/cmake/GTest
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/opt/homebrew/bin/pkg-config
+
+//The directory containing a CMake configuration file for cpr.
+cpr_DIR:PATH=/opt/homebrew/lib/cmake/cpr
 
 //Value Computed by CMake
 market_maker_sim_BINARY_DIR:STATIC=/Users/trevorpowell/market_maker/build
@@ -262,6 +263,12 @@ market_maker_sim_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 market_maker_sim_SOURCE_DIR:STATIC=/Users/trevorpowell/market_maker
+
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=/opt/homebrew/share/cmake/nlohmann_json
+
+//Path to a library.
+pkgcfg_lib_PC_CURL_curl:FILEPATH=/opt/anaconda3/lib/libcurl.dylib
 
 
 ########################
@@ -423,6 +430,62 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CURL_DIR
+CURL_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CURL_INCLUDE_DIR
+CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CURL_LIBRARY_DEBUG
+CURL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CURL_LIBRARY_RELEASE
+CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//Details about finding CURL
+FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/opt/anaconda3/lib/libcurl.dylib][/opt/anaconda3/include][ ][v8.5.0()]
 //Details about finding GTest
 FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/opt/anaconda3/lib/cmake/GTest/GTestConfig.cmake][ ][v1.11.0()]
+//Details about finding nlohmann_json
+FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.12.0()]
+PC_CURL_CFLAGS:INTERNAL=-I/opt/anaconda3/include
+PC_CURL_CFLAGS_I:INTERNAL=
+PC_CURL_CFLAGS_OTHER:INTERNAL=
+PC_CURL_FOUND:INTERNAL=1
+PC_CURL_INCLUDEDIR:INTERNAL=/opt/anaconda3/include
+PC_CURL_INCLUDE_DIRS:INTERNAL=/opt/anaconda3/include
+PC_CURL_LDFLAGS:INTERNAL=-L/opt/anaconda3/lib;-lcurl
+PC_CURL_LDFLAGS_OTHER:INTERNAL=
+PC_CURL_LIBDIR:INTERNAL=/opt/anaconda3/lib
+PC_CURL_LIBRARIES:INTERNAL=curl
+PC_CURL_LIBRARY_DIRS:INTERNAL=/opt/anaconda3/lib
+PC_CURL_LIBS:INTERNAL=
+PC_CURL_LIBS_L:INTERNAL=
+PC_CURL_LIBS_OTHER:INTERNAL=
+PC_CURL_LIBS_PATHS:INTERNAL=
+PC_CURL_MODULE_NAME:INTERNAL=libcurl
+PC_CURL_PREFIX:INTERNAL=/opt/anaconda3
+PC_CURL_STATIC_CFLAGS:INTERNAL=-I/opt/anaconda3/include
+PC_CURL_STATIC_CFLAGS_I:INTERNAL=
+PC_CURL_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_CURL_STATIC_INCLUDE_DIRS:INTERNAL=/opt/anaconda3/include
+PC_CURL_STATIC_LDFLAGS:INTERNAL=-L/opt/anaconda3/lib;-lcurl;-lnghttp2;-lssh2;-lssh2;-lssl;-lcrypto;-lssl;-lcrypto;-lgssapi_krb5;-lresolv;-lz
+PC_CURL_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_CURL_STATIC_LIBDIR:INTERNAL=
+PC_CURL_STATIC_LIBRARIES:INTERNAL=curl;nghttp2;ssh2;ssh2;ssl;crypto;ssl;crypto;gssapi_krb5;resolv;z
+PC_CURL_STATIC_LIBRARY_DIRS:INTERNAL=/opt/anaconda3/lib
+PC_CURL_STATIC_LIBS:INTERNAL=
+PC_CURL_STATIC_LIBS_L:INTERNAL=
+PC_CURL_STATIC_LIBS_OTHER:INTERNAL=
+PC_CURL_STATIC_LIBS_PATHS:INTERNAL=
+PC_CURL_VERSION:INTERNAL=8.5.0
+PC_CURL_libcurl_INCLUDEDIR:INTERNAL=
+PC_CURL_libcurl_LIBDIR:INTERNAL=
+PC_CURL_libcurl_PREFIX:INTERNAL=
+PC_CURL_libcurl_VERSION:INTERNAL=
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+__pkg_config_arguments_PC_CURL:INTERNAL=QUIET;libcurl
+__pkg_config_checked_PC_CURL:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_CURL_curl
+pkgcfg_lib_PC_CURL_curl-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=AsynchDNS;GSS-API;HSTS;HTTP2;HTTPS-proxy;IPv6;Kerberos;Largefile;NTLM;SPNEGO;SSL;TLS-SRP;UnixSockets;alt-svc;libz;threadsafe
 

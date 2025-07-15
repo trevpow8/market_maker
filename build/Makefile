@@ -31,6 +31,9 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -140,6 +143,32 @@ lob_engine/fast:
 .PHONY : lob_engine/fast
 
 #=============================================================================
+# Target rules for targets named strategies
+
+# Build rule for target.
+strategies: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 strategies
+.PHONY : strategies
+
+# fast build rule for target.
+strategies/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/strategies.dir/build.make src/CMakeFiles/strategies.dir/build
+.PHONY : strategies/fast
+
+#=============================================================================
+# Target rules for targets named pnl
+
+# Build rule for target.
+pnl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pnl
+.PHONY : pnl
+
+# fast build rule for target.
+pnl/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/pnl.dir/build.make src/CMakeFiles/pnl.dir/build
+.PHONY : pnl/fast
+
+#=============================================================================
 # Target rules for targets named simulator
 
 # Build rule for target.
@@ -153,17 +182,56 @@ simulator/fast:
 .PHONY : simulator/fast
 
 #=============================================================================
-# Target rules for targets named test_orderbook
+# Target rules for targets named alpaca
 
 # Build rule for target.
-test_orderbook: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_orderbook
-.PHONY : test_orderbook
+alpaca: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 alpaca
+.PHONY : alpaca
 
 # fast build rule for target.
-test_orderbook/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_orderbook.dir/build.make tests/CMakeFiles/test_orderbook.dir/build
-.PHONY : test_orderbook/fast
+alpaca/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/alpaca.dir/build.make src/CMakeFiles/alpaca.dir/build
+.PHONY : alpaca/fast
+
+#=============================================================================
+# Target rules for targets named market_maker
+
+# Build rule for target.
+market_maker: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 market_maker
+.PHONY : market_maker
+
+# fast build rule for target.
+market_maker/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/market_maker.dir/build.make src/CMakeFiles/market_maker.dir/build
+.PHONY : market_maker/fast
+
+#=============================================================================
+# Target rules for targets named test_alpaca
+
+# Build rule for target.
+test_alpaca: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_alpaca
+.PHONY : test_alpaca
+
+# fast build rule for target.
+test_alpaca/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/test_alpaca.dir/build.make src/CMakeFiles/test_alpaca.dir/build
+.PHONY : test_alpaca/fast
+
+#=============================================================================
+# Target rules for targets named market_maker_tests
+
+# Build rule for target.
+market_maker_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 market_maker_tests
+.PHONY : market_maker_tests
+
+# fast build rule for target.
+market_maker_tests/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/market_maker_tests.dir/build.make tests/CMakeFiles/market_maker_tests.dir/build
+.PHONY : market_maker_tests/fast
 
 # Help Target
 help:
@@ -174,9 +242,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... alpaca"
 	@echo "... lob_engine"
+	@echo "... market_maker"
+	@echo "... market_maker_tests"
+	@echo "... pnl"
 	@echo "... simulator"
-	@echo "... test_orderbook"
+	@echo "... strategies"
+	@echo "... test_alpaca"
 .PHONY : help
 
 

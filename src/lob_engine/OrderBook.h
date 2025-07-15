@@ -1,3 +1,5 @@
+#pragma once
+
 #include <map>
 #include <vector>
 
@@ -16,6 +18,11 @@ using Trade = std::tuple<int/*contraId*/,int/*qty*/,double/*price*/>;
 class OrderBook {
 public:
     std::vector<std::tuple<int,int,double>> addOrder(const Order& o);
+    
+    // Public methods to get best prices
+    double getBestBid() const;
+    double getBestAsk() const;
+    double getMidPrice() const;
 
 private:
     std::map<double, std::map<int,int>, std::greater<>> bids_;

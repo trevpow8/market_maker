@@ -29,10 +29,8 @@ TEST(OrderBook, NoFill) {
 TEST(OrderBook, ZeroQuantityNoOp) {
     OrderBook ob;
     ob.addOrder({1, Side::Ask, 100.0, 5});
-    // Zero-quantity bid should do nothing
     auto trades = ob.addOrder({2, Side::Bid, 100.0, 0});
     EXPECT_TRUE(trades.empty());
-    // The original ask should still be fully there
     auto trades2 = ob.addOrder({3, Side::Bid, 100.0, 5});
     ASSERT_EQ(trades2.size(), 1);
     EXPECT_EQ(std::get<1>(trades2[0]), 5);

@@ -34,9 +34,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/Compiler/Clang-CXX.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/Compiler/Clang.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/Compiler/GNU.cmake"
+  "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/FindCURL.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/FindGTest.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/FindPackageMessage.cmake"
+  "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/FindPkgConfig.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/FindThreads.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/GoogleTest.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake"
@@ -54,6 +56,14 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/Platform/Linker/Apple-C.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/Platform/Linker/Apple-CXX.cmake"
   "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/Platform/UnixPaths.cmake"
+  "/opt/anaconda3/lib/python3.11/site-packages/cmake/data/share/cmake-4.0/Modules/SelectLibraryConfigurations.cmake"
+  "/opt/homebrew/lib/cmake/cpr/cprConfig.cmake"
+  "/opt/homebrew/lib/cmake/cpr/cprConfigVersion.cmake"
+  "/opt/homebrew/lib/cmake/cpr/cprTargets-release.cmake"
+  "/opt/homebrew/lib/cmake/cpr/cprTargets.cmake"
+  "/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake"
+  "/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake"
+  "/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonTargets.cmake"
   )
 
 # The corresponding makefile is:
@@ -72,6 +82,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/lob_engine.dir/DependInfo.cmake"
+  "src/CMakeFiles/strategies.dir/DependInfo.cmake"
+  "src/CMakeFiles/pnl.dir/DependInfo.cmake"
   "src/CMakeFiles/simulator.dir/DependInfo.cmake"
-  "tests/CMakeFiles/test_orderbook.dir/DependInfo.cmake"
+  "src/CMakeFiles/alpaca.dir/DependInfo.cmake"
+  "src/CMakeFiles/market_maker.dir/DependInfo.cmake"
+  "src/CMakeFiles/test_alpaca.dir/DependInfo.cmake"
+  "tests/CMakeFiles/market_maker_tests.dir/DependInfo.cmake"
   )

@@ -68,3 +68,28 @@ std::vector<Trade> OrderBook::addOrder(const Order& o) {
 
     return trades;
 }
+
+double OrderBook::getBestBid() const {
+    if (bids_.empty()) {
+        return 0.0;
+    }
+    return bids_.begin()->first;
+}
+
+double OrderBook::getBestAsk() const {
+    if (asks_.empty()) {
+        return 0.0;
+    }
+    return asks_.begin()->first;
+}
+
+double OrderBook::getMidPrice() const {
+    double bestBid = getBestBid();
+    double bestAsk = getBestAsk();
+    
+    if (bestBid <= 0 || bestAsk <= 0) {
+        return 0.0;
+    }
+    
+    return (bestBid + bestAsk) / 2.0;
+}

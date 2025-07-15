@@ -28,6 +28,9 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -87,12 +90,22 @@ clean: tests/clean
 
 # Recursive "all" directory target.
 src/all: src/CMakeFiles/lob_engine.dir/all
+src/all: src/CMakeFiles/strategies.dir/all
+src/all: src/CMakeFiles/pnl.dir/all
 src/all: src/CMakeFiles/simulator.dir/all
+src/all: src/CMakeFiles/alpaca.dir/all
+src/all: src/CMakeFiles/market_maker.dir/all
+src/all: src/CMakeFiles/test_alpaca.dir/all
 .PHONY : src/all
 
 # Recursive "codegen" directory target.
 src/codegen: src/CMakeFiles/lob_engine.dir/codegen
+src/codegen: src/CMakeFiles/strategies.dir/codegen
+src/codegen: src/CMakeFiles/pnl.dir/codegen
 src/codegen: src/CMakeFiles/simulator.dir/codegen
+src/codegen: src/CMakeFiles/alpaca.dir/codegen
+src/codegen: src/CMakeFiles/market_maker.dir/codegen
+src/codegen: src/CMakeFiles/test_alpaca.dir/codegen
 .PHONY : src/codegen
 
 # Recursive "preinstall" directory target.
@@ -101,18 +114,23 @@ src/preinstall:
 
 # Recursive "clean" directory target.
 src/clean: src/CMakeFiles/lob_engine.dir/clean
+src/clean: src/CMakeFiles/strategies.dir/clean
+src/clean: src/CMakeFiles/pnl.dir/clean
 src/clean: src/CMakeFiles/simulator.dir/clean
+src/clean: src/CMakeFiles/alpaca.dir/clean
+src/clean: src/CMakeFiles/market_maker.dir/clean
+src/clean: src/CMakeFiles/test_alpaca.dir/clean
 .PHONY : src/clean
 
 #=============================================================================
 # Directory level rules for directory tests
 
 # Recursive "all" directory target.
-tests/all: tests/CMakeFiles/test_orderbook.dir/all
+tests/all: tests/CMakeFiles/market_maker_tests.dir/all
 .PHONY : tests/all
 
 # Recursive "codegen" directory target.
-tests/codegen: tests/CMakeFiles/test_orderbook.dir/codegen
+tests/codegen: tests/CMakeFiles/market_maker_tests.dir/codegen
 .PHONY : tests/codegen
 
 # Recursive "preinstall" directory target.
@@ -120,7 +138,7 @@ tests/preinstall:
 .PHONY : tests/preinstall
 
 # Recursive "clean" directory target.
-tests/clean: tests/CMakeFiles/test_orderbook.dir/clean
+tests/clean: tests/CMakeFiles/market_maker_tests.dir/clean
 .PHONY : tests/clean
 
 #=============================================================================
@@ -130,7 +148,7 @@ tests/clean: tests/CMakeFiles/test_orderbook.dir/clean
 src/CMakeFiles/lob_engine.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lob_engine.dir/build.make src/CMakeFiles/lob_engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lob_engine.dir/build.make src/CMakeFiles/lob_engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=1,2 "Built target lob_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=3,4 "Built target lob_engine"
 .PHONY : src/CMakeFiles/lob_engine.dir/all
 
 # Build rule for subdir invocation for target.
@@ -147,7 +165,7 @@ lob_engine: src/CMakeFiles/lob_engine.dir/rule
 # codegen rule for target.
 src/CMakeFiles/lob_engine.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lob_engine.dir/build.make src/CMakeFiles/lob_engine.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=1,2 "Finished codegen for target lob_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=3,4 "Finished codegen for target lob_engine"
 .PHONY : src/CMakeFiles/lob_engine.dir/codegen
 
 # clean rule for target.
@@ -156,18 +174,84 @@ src/CMakeFiles/lob_engine.dir/clean:
 .PHONY : src/CMakeFiles/lob_engine.dir/clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/strategies.dir
+
+# All Build rule for target.
+src/CMakeFiles/strategies.dir/all: src/CMakeFiles/lob_engine.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/strategies.dir/build.make src/CMakeFiles/strategies.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/strategies.dir/build.make src/CMakeFiles/strategies.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=13,14 "Built target strategies"
+.PHONY : src/CMakeFiles/strategies.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/strategies.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/strategies.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/strategies.dir/rule
+
+# Convenience name for target.
+strategies: src/CMakeFiles/strategies.dir/rule
+.PHONY : strategies
+
+# codegen rule for target.
+src/CMakeFiles/strategies.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/strategies.dir/build.make src/CMakeFiles/strategies.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=13,14 "Finished codegen for target strategies"
+.PHONY : src/CMakeFiles/strategies.dir/codegen
+
+# clean rule for target.
+src/CMakeFiles/strategies.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/strategies.dir/build.make src/CMakeFiles/strategies.dir/clean
+.PHONY : src/CMakeFiles/strategies.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/pnl.dir
+
+# All Build rule for target.
+src/CMakeFiles/pnl.dir/all: src/CMakeFiles/lob_engine.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/pnl.dir/build.make src/CMakeFiles/pnl.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/pnl.dir/build.make src/CMakeFiles/pnl.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=9,10 "Built target pnl"
+.PHONY : src/CMakeFiles/pnl.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/pnl.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/pnl.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/pnl.dir/rule
+
+# Convenience name for target.
+pnl: src/CMakeFiles/pnl.dir/rule
+.PHONY : pnl
+
+# codegen rule for target.
+src/CMakeFiles/pnl.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/pnl.dir/build.make src/CMakeFiles/pnl.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=9,10 "Finished codegen for target pnl"
+.PHONY : src/CMakeFiles/pnl.dir/codegen
+
+# clean rule for target.
+src/CMakeFiles/pnl.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/pnl.dir/build.make src/CMakeFiles/pnl.dir/clean
+.PHONY : src/CMakeFiles/pnl.dir/clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/simulator.dir
 
 # All Build rule for target.
 src/CMakeFiles/simulator.dir/all: src/CMakeFiles/lob_engine.dir/all
+src/CMakeFiles/simulator.dir/all: src/CMakeFiles/strategies.dir/all
+src/CMakeFiles/simulator.dir/all: src/CMakeFiles/pnl.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=3,4 "Built target simulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=11,12 "Built target simulator"
 .PHONY : src/CMakeFiles/simulator.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/simulator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/simulator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/simulator.dir/rule
@@ -179,7 +263,7 @@ simulator: src/CMakeFiles/simulator.dir/rule
 # codegen rule for target.
 src/CMakeFiles/simulator.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=3,4 "Finished codegen for target simulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=11,12 "Finished codegen for target simulator"
 .PHONY : src/CMakeFiles/simulator.dir/codegen
 
 # clean rule for target.
@@ -188,36 +272,137 @@ src/CMakeFiles/simulator.dir/clean:
 .PHONY : src/CMakeFiles/simulator.dir/clean
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/test_orderbook.dir
+# Target rules for target src/CMakeFiles/alpaca.dir
 
 # All Build rule for target.
-tests/CMakeFiles/test_orderbook.dir/all: src/CMakeFiles/lob_engine.dir/all
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_orderbook.dir/build.make tests/CMakeFiles/test_orderbook.dir/depend
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_orderbook.dir/build.make tests/CMakeFiles/test_orderbook.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=5,6 "Built target test_orderbook"
-.PHONY : tests/CMakeFiles/test_orderbook.dir/all
+src/CMakeFiles/alpaca.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/alpaca.dir/build.make src/CMakeFiles/alpaca.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/alpaca.dir/build.make src/CMakeFiles/alpaca.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=1,2 "Built target alpaca"
+.PHONY : src/CMakeFiles/alpaca.dir/all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/test_orderbook.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_orderbook.dir/all
+src/CMakeFiles/alpaca.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/alpaca.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/test_orderbook.dir/rule
+.PHONY : src/CMakeFiles/alpaca.dir/rule
 
 # Convenience name for target.
-test_orderbook: tests/CMakeFiles/test_orderbook.dir/rule
-.PHONY : test_orderbook
+alpaca: src/CMakeFiles/alpaca.dir/rule
+.PHONY : alpaca
 
 # codegen rule for target.
-tests/CMakeFiles/test_orderbook.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_orderbook.dir/build.make tests/CMakeFiles/test_orderbook.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=5,6 "Finished codegen for target test_orderbook"
-.PHONY : tests/CMakeFiles/test_orderbook.dir/codegen
+src/CMakeFiles/alpaca.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/alpaca.dir/build.make src/CMakeFiles/alpaca.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=1,2 "Finished codegen for target alpaca"
+.PHONY : src/CMakeFiles/alpaca.dir/codegen
 
 # clean rule for target.
-tests/CMakeFiles/test_orderbook.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_orderbook.dir/build.make tests/CMakeFiles/test_orderbook.dir/clean
-.PHONY : tests/CMakeFiles/test_orderbook.dir/clean
+src/CMakeFiles/alpaca.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/alpaca.dir/build.make src/CMakeFiles/alpaca.dir/clean
+.PHONY : src/CMakeFiles/alpaca.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/market_maker.dir
+
+# All Build rule for target.
+src/CMakeFiles/market_maker.dir/all: src/CMakeFiles/lob_engine.dir/all
+src/CMakeFiles/market_maker.dir/all: src/CMakeFiles/strategies.dir/all
+src/CMakeFiles/market_maker.dir/all: src/CMakeFiles/pnl.dir/all
+src/CMakeFiles/market_maker.dir/all: src/CMakeFiles/simulator.dir/all
+src/CMakeFiles/market_maker.dir/all: src/CMakeFiles/alpaca.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/market_maker.dir/build.make src/CMakeFiles/market_maker.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/market_maker.dir/build.make src/CMakeFiles/market_maker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=5,6 "Built target market_maker"
+.PHONY : src/CMakeFiles/market_maker.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/market_maker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/market_maker.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/market_maker.dir/rule
+
+# Convenience name for target.
+market_maker: src/CMakeFiles/market_maker.dir/rule
+.PHONY : market_maker
+
+# codegen rule for target.
+src/CMakeFiles/market_maker.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/market_maker.dir/build.make src/CMakeFiles/market_maker.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=5,6 "Finished codegen for target market_maker"
+.PHONY : src/CMakeFiles/market_maker.dir/codegen
+
+# clean rule for target.
+src/CMakeFiles/market_maker.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/market_maker.dir/build.make src/CMakeFiles/market_maker.dir/clean
+.PHONY : src/CMakeFiles/market_maker.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/test_alpaca.dir
+
+# All Build rule for target.
+src/CMakeFiles/test_alpaca.dir/all: src/CMakeFiles/alpaca.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/test_alpaca.dir/build.make src/CMakeFiles/test_alpaca.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/test_alpaca.dir/build.make src/CMakeFiles/test_alpaca.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=15,16 "Built target test_alpaca"
+.PHONY : src/CMakeFiles/test_alpaca.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/test_alpaca.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/test_alpaca.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/test_alpaca.dir/rule
+
+# Convenience name for target.
+test_alpaca: src/CMakeFiles/test_alpaca.dir/rule
+.PHONY : test_alpaca
+
+# codegen rule for target.
+src/CMakeFiles/test_alpaca.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/test_alpaca.dir/build.make src/CMakeFiles/test_alpaca.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=15,16 "Finished codegen for target test_alpaca"
+.PHONY : src/CMakeFiles/test_alpaca.dir/codegen
+
+# clean rule for target.
+src/CMakeFiles/test_alpaca.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/test_alpaca.dir/build.make src/CMakeFiles/test_alpaca.dir/clean
+.PHONY : src/CMakeFiles/test_alpaca.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/market_maker_tests.dir
+
+# All Build rule for target.
+tests/CMakeFiles/market_maker_tests.dir/all: src/CMakeFiles/lob_engine.dir/all
+tests/CMakeFiles/market_maker_tests.dir/all: src/CMakeFiles/strategies.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/market_maker_tests.dir/build.make tests/CMakeFiles/market_maker_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/market_maker_tests.dir/build.make tests/CMakeFiles/market_maker_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=7,8 "Built target market_maker_tests"
+.PHONY : tests/CMakeFiles/market_maker_tests.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/market_maker_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/market_maker_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trevorpowell/market_maker/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/market_maker_tests.dir/rule
+
+# Convenience name for target.
+market_maker_tests: tests/CMakeFiles/market_maker_tests.dir/rule
+.PHONY : market_maker_tests
+
+# codegen rule for target.
+tests/CMakeFiles/market_maker_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/market_maker_tests.dir/build.make tests/CMakeFiles/market_maker_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=7,8 "Finished codegen for target market_maker_tests"
+.PHONY : tests/CMakeFiles/market_maker_tests.dir/codegen
+
+# clean rule for target.
+tests/CMakeFiles/market_maker_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/market_maker_tests.dir/build.make tests/CMakeFiles/market_maker_tests.dir/clean
+.PHONY : tests/CMakeFiles/market_maker_tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

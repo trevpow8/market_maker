@@ -27,6 +27,9 @@
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -72,36 +75,36 @@ include src/CMakeFiles/simulator.dir/flags.make
 src/CMakeFiles/simulator.dir/codegen:
 .PHONY : src/CMakeFiles/simulator.dir/codegen
 
-src/CMakeFiles/simulator.dir/main.cpp.o: src/CMakeFiles/simulator.dir/flags.make
-src/CMakeFiles/simulator.dir/main.cpp.o: /Users/trevorpowell/market_maker/src/main.cpp
-src/CMakeFiles/simulator.dir/main.cpp.o: src/CMakeFiles/simulator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/simulator.dir/main.cpp.o"
-	cd /Users/trevorpowell/market_maker/build/src && /opt/anaconda3/bin/arm64-apple-darwin20.0.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/simulator.dir/main.cpp.o -MF CMakeFiles/simulator.dir/main.cpp.o.d -o CMakeFiles/simulator.dir/main.cpp.o -c /Users/trevorpowell/market_maker/src/main.cpp
+src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.o: src/CMakeFiles/simulator.dir/flags.make
+src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.o: /Users/trevorpowell/market_maker/src/simulator/Simulator.cpp
+src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.o: src/CMakeFiles/simulator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.o"
+	cd /Users/trevorpowell/market_maker/build/src && /opt/anaconda3/bin/arm64-apple-darwin20.0.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.o -MF CMakeFiles/simulator.dir/simulator/Simulator.cpp.o.d -o CMakeFiles/simulator.dir/simulator/Simulator.cpp.o -c /Users/trevorpowell/market_maker/src/simulator/Simulator.cpp
 
-src/CMakeFiles/simulator.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/simulator.dir/main.cpp.i"
-	cd /Users/trevorpowell/market_maker/build/src && /opt/anaconda3/bin/arm64-apple-darwin20.0.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/trevorpowell/market_maker/src/main.cpp > CMakeFiles/simulator.dir/main.cpp.i
+src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/simulator.dir/simulator/Simulator.cpp.i"
+	cd /Users/trevorpowell/market_maker/build/src && /opt/anaconda3/bin/arm64-apple-darwin20.0.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/trevorpowell/market_maker/src/simulator/Simulator.cpp > CMakeFiles/simulator.dir/simulator/Simulator.cpp.i
 
-src/CMakeFiles/simulator.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/simulator.dir/main.cpp.s"
-	cd /Users/trevorpowell/market_maker/build/src && /opt/anaconda3/bin/arm64-apple-darwin20.0.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/trevorpowell/market_maker/src/main.cpp -o CMakeFiles/simulator.dir/main.cpp.s
+src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/simulator.dir/simulator/Simulator.cpp.s"
+	cd /Users/trevorpowell/market_maker/build/src && /opt/anaconda3/bin/arm64-apple-darwin20.0.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/trevorpowell/market_maker/src/simulator/Simulator.cpp -o CMakeFiles/simulator.dir/simulator/Simulator.cpp.s
 
 # Object files for target simulator
 simulator_OBJECTS = \
-"CMakeFiles/simulator.dir/main.cpp.o"
+"CMakeFiles/simulator.dir/simulator/Simulator.cpp.o"
 
 # External object files for target simulator
 simulator_EXTERNAL_OBJECTS =
 
-src/simulator: src/CMakeFiles/simulator.dir/main.cpp.o
-src/simulator: src/CMakeFiles/simulator.dir/build.make
-src/simulator: src/liblob_engine.a
-src/simulator: src/CMakeFiles/simulator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable simulator"
+src/libsimulator.a: src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.o
+src/libsimulator.a: src/CMakeFiles/simulator.dir/build.make
+src/libsimulator.a: src/CMakeFiles/simulator.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/trevorpowell/market_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libsimulator.a"
+	cd /Users/trevorpowell/market_maker/build/src && $(CMAKE_COMMAND) -P CMakeFiles/simulator.dir/cmake_clean_target.cmake
 	cd /Users/trevorpowell/market_maker/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simulator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/simulator.dir/build: src/simulator
+src/CMakeFiles/simulator.dir/build: src/libsimulator.a
 .PHONY : src/CMakeFiles/simulator.dir/build
 
 src/CMakeFiles/simulator.dir/clean:

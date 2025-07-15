@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/simulator.dir/main.cpp.o"
-  "CMakeFiles/simulator.dir/main.cpp.o.d"
-  "simulator"
-  "simulator.pdb"
+  "CMakeFiles/simulator.dir/simulator/Simulator.cpp.o"
+  "CMakeFiles/simulator.dir/simulator/Simulator.cpp.o.d"
+  "libsimulator.a"
+  "libsimulator.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
