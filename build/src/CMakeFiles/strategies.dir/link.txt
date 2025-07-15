@@ -1,0 +1,2 @@
+/opt/anaconda3/bin/arm64-apple-darwin20.0.0-ar qc libstrategies.a CMakeFiles/strategies.dir/strategies/FixedSpreadStrategy.cpp.o
+/opt/anaconda3/bin/llvm-ranlib libstrategies.a

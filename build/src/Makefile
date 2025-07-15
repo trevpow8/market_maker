@@ -31,6 +31,9 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -141,6 +144,34 @@ lob_engine/fast:
 .PHONY : lob_engine/fast
 
 # Convenience name for target.
+src/CMakeFiles/strategies.dir/rule:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/strategies.dir/rule
+.PHONY : src/CMakeFiles/strategies.dir/rule
+
+# Convenience name for target.
+strategies: src/CMakeFiles/strategies.dir/rule
+.PHONY : strategies
+
+# fast build rule for target.
+strategies/fast:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/strategies.dir/build.make src/CMakeFiles/strategies.dir/build
+.PHONY : strategies/fast
+
+# Convenience name for target.
+src/CMakeFiles/pnl.dir/rule:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/pnl.dir/rule
+.PHONY : src/CMakeFiles/pnl.dir/rule
+
+# Convenience name for target.
+pnl: src/CMakeFiles/pnl.dir/rule
+.PHONY : pnl
+
+# fast build rule for target.
+pnl/fast:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pnl.dir/build.make src/CMakeFiles/pnl.dir/build
+.PHONY : pnl/fast
+
+# Convenience name for target.
 src/CMakeFiles/simulator.dir/rule:
 	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/simulator.dir/rule
 .PHONY : src/CMakeFiles/simulator.dir/rule
@@ -153,6 +184,72 @@ simulator: src/CMakeFiles/simulator.dir/rule
 simulator/fast:
 	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/build
 .PHONY : simulator/fast
+
+# Convenience name for target.
+src/CMakeFiles/alpaca.dir/rule:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/alpaca.dir/rule
+.PHONY : src/CMakeFiles/alpaca.dir/rule
+
+# Convenience name for target.
+alpaca: src/CMakeFiles/alpaca.dir/rule
+.PHONY : alpaca
+
+# fast build rule for target.
+alpaca/fast:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/alpaca.dir/build.make src/CMakeFiles/alpaca.dir/build
+.PHONY : alpaca/fast
+
+# Convenience name for target.
+src/CMakeFiles/market_maker.dir/rule:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/market_maker.dir/rule
+.PHONY : src/CMakeFiles/market_maker.dir/rule
+
+# Convenience name for target.
+market_maker: src/CMakeFiles/market_maker.dir/rule
+.PHONY : market_maker
+
+# fast build rule for target.
+market_maker/fast:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/market_maker.dir/build.make src/CMakeFiles/market_maker.dir/build
+.PHONY : market_maker/fast
+
+# Convenience name for target.
+src/CMakeFiles/test_alpaca.dir/rule:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/test_alpaca.dir/rule
+.PHONY : src/CMakeFiles/test_alpaca.dir/rule
+
+# Convenience name for target.
+test_alpaca: src/CMakeFiles/test_alpaca.dir/rule
+.PHONY : test_alpaca
+
+# fast build rule for target.
+test_alpaca/fast:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/test_alpaca.dir/build.make src/CMakeFiles/test_alpaca.dir/build
+.PHONY : test_alpaca/fast
+
+alpaca/AlpacaTrader.o: alpaca/AlpacaTrader.cpp.o
+.PHONY : alpaca/AlpacaTrader.o
+
+# target to build an object file
+alpaca/AlpacaTrader.cpp.o:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/alpaca.dir/build.make src/CMakeFiles/alpaca.dir/alpaca/AlpacaTrader.cpp.o
+.PHONY : alpaca/AlpacaTrader.cpp.o
+
+alpaca/AlpacaTrader.i: alpaca/AlpacaTrader.cpp.i
+.PHONY : alpaca/AlpacaTrader.i
+
+# target to preprocess a source file
+alpaca/AlpacaTrader.cpp.i:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/alpaca.dir/build.make src/CMakeFiles/alpaca.dir/alpaca/AlpacaTrader.cpp.i
+.PHONY : alpaca/AlpacaTrader.cpp.i
+
+alpaca/AlpacaTrader.s: alpaca/AlpacaTrader.cpp.s
+.PHONY : alpaca/AlpacaTrader.s
+
+# target to generate assembly for a file
+alpaca/AlpacaTrader.cpp.s:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/alpaca.dir/build.make src/CMakeFiles/alpaca.dir/alpaca/AlpacaTrader.cpp.s
+.PHONY : alpaca/AlpacaTrader.cpp.s
 
 lob_engine/OrderBook.o: lob_engine/OrderBook.cpp.o
 .PHONY : lob_engine/OrderBook.o
@@ -183,7 +280,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/main.cpp.o
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/market_maker.dir/build.make src/CMakeFiles/market_maker.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -191,7 +288,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/main.cpp.i
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/market_maker.dir/build.make src/CMakeFiles/market_maker.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -199,8 +296,104 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/main.cpp.s
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/market_maker.dir/build.make src/CMakeFiles/market_maker.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+pnl/PnLCollector.o: pnl/PnLCollector.cpp.o
+.PHONY : pnl/PnLCollector.o
+
+# target to build an object file
+pnl/PnLCollector.cpp.o:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pnl.dir/build.make src/CMakeFiles/pnl.dir/pnl/PnLCollector.cpp.o
+.PHONY : pnl/PnLCollector.cpp.o
+
+pnl/PnLCollector.i: pnl/PnLCollector.cpp.i
+.PHONY : pnl/PnLCollector.i
+
+# target to preprocess a source file
+pnl/PnLCollector.cpp.i:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pnl.dir/build.make src/CMakeFiles/pnl.dir/pnl/PnLCollector.cpp.i
+.PHONY : pnl/PnLCollector.cpp.i
+
+pnl/PnLCollector.s: pnl/PnLCollector.cpp.s
+.PHONY : pnl/PnLCollector.s
+
+# target to generate assembly for a file
+pnl/PnLCollector.cpp.s:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pnl.dir/build.make src/CMakeFiles/pnl.dir/pnl/PnLCollector.cpp.s
+.PHONY : pnl/PnLCollector.cpp.s
+
+simulator/Simulator.o: simulator/Simulator.cpp.o
+.PHONY : simulator/Simulator.o
+
+# target to build an object file
+simulator/Simulator.cpp.o:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.o
+.PHONY : simulator/Simulator.cpp.o
+
+simulator/Simulator.i: simulator/Simulator.cpp.i
+.PHONY : simulator/Simulator.i
+
+# target to preprocess a source file
+simulator/Simulator.cpp.i:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.i
+.PHONY : simulator/Simulator.cpp.i
+
+simulator/Simulator.s: simulator/Simulator.cpp.s
+.PHONY : simulator/Simulator.s
+
+# target to generate assembly for a file
+simulator/Simulator.cpp.s:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/simulator.dir/build.make src/CMakeFiles/simulator.dir/simulator/Simulator.cpp.s
+.PHONY : simulator/Simulator.cpp.s
+
+strategies/FixedSpreadStrategy.o: strategies/FixedSpreadStrategy.cpp.o
+.PHONY : strategies/FixedSpreadStrategy.o
+
+# target to build an object file
+strategies/FixedSpreadStrategy.cpp.o:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/strategies.dir/build.make src/CMakeFiles/strategies.dir/strategies/FixedSpreadStrategy.cpp.o
+.PHONY : strategies/FixedSpreadStrategy.cpp.o
+
+strategies/FixedSpreadStrategy.i: strategies/FixedSpreadStrategy.cpp.i
+.PHONY : strategies/FixedSpreadStrategy.i
+
+# target to preprocess a source file
+strategies/FixedSpreadStrategy.cpp.i:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/strategies.dir/build.make src/CMakeFiles/strategies.dir/strategies/FixedSpreadStrategy.cpp.i
+.PHONY : strategies/FixedSpreadStrategy.cpp.i
+
+strategies/FixedSpreadStrategy.s: strategies/FixedSpreadStrategy.cpp.s
+.PHONY : strategies/FixedSpreadStrategy.s
+
+# target to generate assembly for a file
+strategies/FixedSpreadStrategy.cpp.s:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/strategies.dir/build.make src/CMakeFiles/strategies.dir/strategies/FixedSpreadStrategy.cpp.s
+.PHONY : strategies/FixedSpreadStrategy.cpp.s
+
+test_alpaca.o: test_alpaca.cpp.o
+.PHONY : test_alpaca.o
+
+# target to build an object file
+test_alpaca.cpp.o:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/test_alpaca.dir/build.make src/CMakeFiles/test_alpaca.dir/test_alpaca.cpp.o
+.PHONY : test_alpaca.cpp.o
+
+test_alpaca.i: test_alpaca.cpp.i
+.PHONY : test_alpaca.i
+
+# target to preprocess a source file
+test_alpaca.cpp.i:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/test_alpaca.dir/build.make src/CMakeFiles/test_alpaca.dir/test_alpaca.cpp.i
+.PHONY : test_alpaca.cpp.i
+
+test_alpaca.s: test_alpaca.cpp.s
+.PHONY : test_alpaca.s
+
+# target to generate assembly for a file
+test_alpaca.cpp.s:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/test_alpaca.dir/build.make src/CMakeFiles/test_alpaca.dir/test_alpaca.cpp.s
+.PHONY : test_alpaca.cpp.s
 
 # Help Target
 help:
@@ -211,14 +404,34 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... alpaca"
 	@echo "... lob_engine"
+	@echo "... market_maker"
+	@echo "... pnl"
 	@echo "... simulator"
+	@echo "... strategies"
+	@echo "... test_alpaca"
+	@echo "... alpaca/AlpacaTrader.o"
+	@echo "... alpaca/AlpacaTrader.i"
+	@echo "... alpaca/AlpacaTrader.s"
 	@echo "... lob_engine/OrderBook.o"
 	@echo "... lob_engine/OrderBook.i"
 	@echo "... lob_engine/OrderBook.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... pnl/PnLCollector.o"
+	@echo "... pnl/PnLCollector.i"
+	@echo "... pnl/PnLCollector.s"
+	@echo "... simulator/Simulator.o"
+	@echo "... simulator/Simulator.i"
+	@echo "... simulator/Simulator.s"
+	@echo "... strategies/FixedSpreadStrategy.o"
+	@echo "... strategies/FixedSpreadStrategy.i"
+	@echo "... strategies/FixedSpreadStrategy.s"
+	@echo "... test_alpaca.o"
+	@echo "... test_alpaca.i"
+	@echo "... test_alpaca.s"
 .PHONY : help
 
 

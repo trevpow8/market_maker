@@ -1,0 +1,37 @@
+Start testing: Jul 10 20:52 EDT
+----------------------------------------------------------
+1/1 Testing: OrderBookTest
+1/1 Test: OrderBookTest
+Command: "/Users/trevorpowell/market_maker/build/tests/test_orderbook"
+Directory: /Users/trevorpowell/market_maker/build/tests
+"OrderBookTest" start time: Jul 10 20:52 EDT
+Output:
+----------------------------------------------------------
+Running main() from /private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_b0z4dqiq92/croot/yaml-cpp-split_1698774543299/work/test/gtest-1.11.0/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from OrderBook
+[ RUN      ] OrderBook.SimpleExactFill
+[       OK ] OrderBook.SimpleExactFill (0 ms)
+[ RUN      ] OrderBook.PartialFill
+[       OK ] OrderBook.PartialFill (0 ms)
+[ RUN      ] OrderBook.NoFill
+[       OK ] OrderBook.NoFill (0 ms)
+[ RUN      ] OrderBook.ZeroQuantityNoOp
+[       OK ] OrderBook.ZeroQuantityNoOp (0 ms)
+[ RUN      ] OrderBook.NoCrossInsertion
+[       OK ] OrderBook.NoCrossInsertion (0 ms)
+[----------] 5 tests from OrderBook (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBookTest" end time: Jul 10 20:52 EDT
+"OrderBookTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 10 20:52 EDT

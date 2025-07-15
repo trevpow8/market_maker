@@ -31,6 +31,9 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -127,42 +130,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/test_orderbook.dir/rule:
-	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_orderbook.dir/rule
-.PHONY : tests/CMakeFiles/test_orderbook.dir/rule
+tests/CMakeFiles/market_maker_tests.dir/rule:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/market_maker_tests.dir/rule
+.PHONY : tests/CMakeFiles/market_maker_tests.dir/rule
 
 # Convenience name for target.
-test_orderbook: tests/CMakeFiles/test_orderbook.dir/rule
-.PHONY : test_orderbook
+market_maker_tests: tests/CMakeFiles/market_maker_tests.dir/rule
+.PHONY : market_maker_tests
 
 # fast build rule for target.
-test_orderbook/fast:
-	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_orderbook.dir/build.make tests/CMakeFiles/test_orderbook.dir/build
-.PHONY : test_orderbook/fast
+market_maker_tests/fast:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/market_maker_tests.dir/build.make tests/CMakeFiles/market_maker_tests.dir/build
+.PHONY : market_maker_tests/fast
 
-test_orderbook.o: test_orderbook.cpp.o
-.PHONY : test_orderbook.o
+test_basic.o: test_basic.cpp.o
+.PHONY : test_basic.o
 
 # target to build an object file
-test_orderbook.cpp.o:
-	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_orderbook.dir/build.make tests/CMakeFiles/test_orderbook.dir/test_orderbook.cpp.o
-.PHONY : test_orderbook.cpp.o
+test_basic.cpp.o:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/market_maker_tests.dir/build.make tests/CMakeFiles/market_maker_tests.dir/test_basic.cpp.o
+.PHONY : test_basic.cpp.o
 
-test_orderbook.i: test_orderbook.cpp.i
-.PHONY : test_orderbook.i
+test_basic.i: test_basic.cpp.i
+.PHONY : test_basic.i
 
 # target to preprocess a source file
-test_orderbook.cpp.i:
-	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_orderbook.dir/build.make tests/CMakeFiles/test_orderbook.dir/test_orderbook.cpp.i
-.PHONY : test_orderbook.cpp.i
+test_basic.cpp.i:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/market_maker_tests.dir/build.make tests/CMakeFiles/market_maker_tests.dir/test_basic.cpp.i
+.PHONY : test_basic.cpp.i
 
-test_orderbook.s: test_orderbook.cpp.s
-.PHONY : test_orderbook.s
+test_basic.s: test_basic.cpp.s
+.PHONY : test_basic.s
 
 # target to generate assembly for a file
-test_orderbook.cpp.s:
-	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_orderbook.dir/build.make tests/CMakeFiles/test_orderbook.dir/test_orderbook.cpp.s
-.PHONY : test_orderbook.cpp.s
+test_basic.cpp.s:
+	cd /Users/trevorpowell/market_maker/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/market_maker_tests.dir/build.make tests/CMakeFiles/market_maker_tests.dir/test_basic.cpp.s
+.PHONY : test_basic.cpp.s
 
 # Help Target
 help:
@@ -173,10 +176,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... test_orderbook"
-	@echo "... test_orderbook.o"
-	@echo "... test_orderbook.i"
-	@echo "... test_orderbook.s"
+	@echo "... market_maker_tests"
+	@echo "... test_basic.o"
+	@echo "... test_basic.i"
+	@echo "... test_basic.s"
 .PHONY : help
 
 
